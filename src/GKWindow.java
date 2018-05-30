@@ -42,7 +42,7 @@ public class GKWindow {
 
 		}
 
-		ArrayList<Integer> quantiles = GK.quantile(phi, w, summary, e/2);
+		ArrayList<Integer> quantiles = GK.quantile(phi, w, summary, e);
 
 		return quantiles;
 	}
