@@ -122,7 +122,7 @@ public class GKWindow {
 		if (k > 0) {
 			g = rmin - s.get(k-1).getRmin();
 		} else {
-			g = 1;
+			g = rmin;
 		}
 		d = rmax - rmin;
 
@@ -137,7 +137,7 @@ public class GKWindow {
 		if (t.getRmin() == -1) {
 			int rmin;
 			if (pos == 0) {
-				rmin = 1;
+				rmin = t.getG();
 			} else {
 				rmin = t.getG() + s.get(pos-1).getRmin();
 			}
