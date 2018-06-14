@@ -125,7 +125,7 @@ public class Main {
 			n++;
 		}
 
-		ArrayList<Tuple> summary = blist.get(0).summary;
+		ArrayList<Tuple> summary = blist.get(0).summary();
 
 //		int rmin = 0, rmax;
 		for (Tuple t : summary) {
@@ -140,14 +140,14 @@ public class Main {
 			System.out.println("");
 
 //			rmin = 0;			
-			for (Tuple t : blist.get(i).summary) {
+			for (Tuple t : blist.get(i).summary()) {
 //				rmin += t.getG();
 //				rmax = rmin + t.getD();
 				System.out.println(t.toString());
 //				System.out.println("("+t.getVal()+", "+rmin+", "+rmax+")");
 			}
 
-			summary = GKWindow.merge(summary, blist.get(i).summary);
+			summary = GKWindow.merge(summary, blist.get(i).summary());
 		}
 
 		System.out.println("");

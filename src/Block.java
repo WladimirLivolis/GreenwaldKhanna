@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Block {
 
-	public ArrayList<Tuple> summary;
+	private ArrayList<Tuple> summary;
 
 	private int bstart;
 	private int numObs;
@@ -23,6 +23,10 @@ public class Block {
 
 	public void incrNumObs() {
 		numObs++;
+	}
+	
+	public ArrayList<Tuple> summary() {
+		return summary;
 	}
 
 }

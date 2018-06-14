@@ -26,7 +26,7 @@ public class GKWindow {
 
 		Block under_construction = blockList.get(blockList.size()-1);
 
-		GK.greenwald_khanna(under_construction.numObs(), v, under_construction.summary, e/2);
+		GK.greenwald_khanna(under_construction.numObs(), v, under_construction.summary(), e/2);
 
 		under_construction.incrNumObs();
 
@@ -34,11 +34,11 @@ public class GKWindow {
 
 	public static ArrayList<Integer> quantile(double phi, int w, double e, ArrayList<Block> blist) {
 
-		ArrayList<Tuple> summary = blist.get(0).summary;
+		ArrayList<Tuple> summary = blist.get(0).summary();
 
 		for (int i = 1; i < blist.size(); i++) {
 
-			summary = merge(summary, blist.get(i).summary);
+			summary = merge(summary, blist.get(i).summary());
 
 		}
 

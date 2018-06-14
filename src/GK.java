@@ -85,7 +85,7 @@ public class GK {
 					int new_g = t2.getG() + g_i_star;
 					t2.setG(new_g);
 					for (int k = j; k <= i; k++) {
-						s.remove(k);
+						s.remove(j); // elements on the right are being shifted to the left, hence j is still the position we want to remove an element.
 					}
 				}
 
