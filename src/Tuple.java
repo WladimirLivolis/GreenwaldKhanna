@@ -12,8 +12,8 @@ public class Tuple {
 		this.val = val;
 		this.g = g;
 		this.d = d;
-		rmin = -1;
-		rmax = -1;
+		rmin = 0;
+		rmax = 0;
 	}
 
 	public int getVal() {

@@ -110,7 +110,7 @@ public class GKWindow {
 			rmax = xr.getRmax() + yt.getRmax() - 1;
 		}
 
-		/* value merging */
+		/* Optimization: value merging */
 		if (k > 0) {
 			if (xr.getVal() == s.get(k-1).getVal()) {
 				rmin = s.get(k-1).getRmin();
@@ -131,23 +131,18 @@ public class GKWindow {
 		t.setRmax(rmax);
 		s.add(k, t);
 	}
-
+	
 	private static void updateRanks(int pos, ArrayList<Tuple> s) {
 		Tuple t = s.get(pos);
-		if (t.getRmin() == -1) {
-			int rmin;
-			if (pos == 0) {
-				rmin = t.getG();
-			} else {
-				rmin = t.getG() + s.get(pos-1).getRmin();
-			}
-			t.setRmin(rmin);
+		int rmin, rmax;
+		if (pos == 0) {
+			rmin = t.getG();
+		} else {
+			rmin = t.getG() + s.get(pos-1).getRmin();
 		}
-		if (t.getRmax() == -1) {
-			int rmax;
-			rmax = t.getD() + t.getRmin();
-			t.setRmax(rmax);
-		}
+		rmax = t.getD() + rmin;
+		t.setRmin(rmin);
+		t.setRmax(rmax);
 	}
 
 }
